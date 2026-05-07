@@ -1,0 +1,16 @@
+bin/
+obj/
+out/
+*.user
+*.suo
+.vs/
+.vscode/
+.idea/
+*.swp
+TestResults/
+coverage/
+.env
+.env.*
+!.env.example
+*.log
+appsettings.Local.json

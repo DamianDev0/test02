@@ -1,0 +1,17 @@
+**/bin
+**/obj
+**/out
+**/.vs
+**/.vscode
+**/.idea
+**/TestResults
+**/coverage
+**/*.user
+**/*.suo
+**/.env*
+!**/.env.example
+**/.git
+**/.gitignore
+**/Dockerfile
+**/docker-compose*.yml
+**/*.md

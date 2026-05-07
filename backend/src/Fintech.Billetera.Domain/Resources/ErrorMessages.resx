@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter</value></resheader>
+  <data name="MontoNegativo"><value>El monto del dinero no puede ser negativo en este contexto.</value></data>
+  <data name="MonedaInvalida"><value>La moneda debe ser un codigo ISO 4217 de 3 letras (ej: COP, USD).</value></data>
+  <data name="MonedasDistintas"><value>No se pueden operar monedas distintas: {0} y {1}.</value></data>
+  <data name="SaldoInsuficiente"><value>Saldo insuficiente. Disponible: {0}, requerido: {1}.</value></data>
+  <data name="SaldoNegativo"><value>El saldo disponible no puede ser negativo.</value></data>
+  <data name="CelularInvalido"><value>'{0}' no es un numero celular colombiano valido. Debe iniciar en 3 y tener 10 digitos. Ej: 3001234567</value></data>
+  <data name="PinFormatoInvalido"><value>El PIN debe ser exactamente 4 digitos numericos.</value></data>
+  <data name="PinIncorrecto"><value>PIN incorrecto. Intentos restantes: {0}.</value></data>
+  <data name="CuentaBloqueada"><value>La cuenta esta bloqueada. Contacte al soporte para desbloquear.</value></data>
+  <data name="CuentaCerrada"><value>La cuenta esta cerrada y no puede operar.</value></data>
+  <data name="CuentaCerradaNoAcredita"><value>No se puede acreditar en una cuenta cerrada.</value></data>
+  <data name="CuentaCerradaNoBloquea"><value>No se puede bloquear una cuenta cerrada.</value></data>
+  <data name="PagoMismoCelular"><value>No se puede realizar un pago al mismo numero de origen.</value></data>
+  <data name="LimiteDiarioSuperado"><value>Limite diario superado. Maximo: {0}, ya usado: {1}, solicitado: {2}.</value></data>
+  <data name="CargaSuperaMaximo"><value>La carga supera el saldo maximo permitido de {0}. Saldo actual: {1}, intento cargar: {2}.</value></data>
+  <data name="CuentaNoExiste"><value>No existe cuenta con ID {0}.</value></data>
+  <data name="BilleteraNoExiste"><value>No existe billetera para el numero {0}.</value></data>
+  <data name="CelularYaRegistrado"><value>Ya existe una billetera para el numero {0}.</value></data>
+</root>

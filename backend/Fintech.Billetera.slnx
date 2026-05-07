@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Fintech.Billetera.API/Fintech.Billetera.API.csproj" />
+    <Project Path="src/Fintech.Billetera.Application/Fintech.Billetera.Application.csproj" />
+    <Project Path="src/Fintech.Billetera.Domain/Fintech.Billetera.Domain.csproj" />
+    <Project Path="src/Fintech.Billetera.Infrastructure/Fintech.Billetera.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Fintech.Billetera.Domain.Tests/Fintech.Billetera.Domain.Tests.csproj" />
+  </Folder>
+</Solution>

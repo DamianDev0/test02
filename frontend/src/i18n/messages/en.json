@@ -1,0 +1,95 @@
+{
+  "App": {
+    "title": "Wallet",
+    "description": "Your digital P2P wallet"
+  },
+  "Onboarding": {
+    "titulo": "Create account",
+    "subtitulo": "Your digital wallet in under a minute"
+  },
+  "CrearCuenta": {
+    "campos": {
+      "celular": "Phone",
+      "celularPlaceholder": "3001234567",
+      "pin": "PIN (4 digits)",
+      "pinPlaceholder": "••••"
+    },
+    "acciones": {
+      "submit": "Create account",
+      "submitLoading": "Creating…"
+    },
+    "errores": {
+      "celularInvalido": "Invalid Colombian phone",
+      "pinInvalido": "PIN must be 4 digits",
+      "datosInvalidos": "Invalid data",
+      "red": "Network error. Try again."
+    },
+    "exito": "Account created"
+  },
+  "Cuenta": {
+    "saldo": "Balance",
+    "estado": "Status",
+    "estados": {
+      "Activa": "Active",
+      "Bloqueada": "Blocked",
+      "Cerrada": "Closed"
+    }
+  },
+  "Dashboard": {
+    "titulo": "My wallet",
+    "miCuenta": "Available balance",
+    "acciones": {
+      "cargar": "Load",
+      "pagar": "Pay"
+    },
+    "transacciones": {
+      "titulo": "Recent activity",
+      "vacio": "No transactions yet"
+    }
+  },
+  "CargarSaldo": {
+    "titulo": "Load balance",
+    "subtitulo": "Transfer from your bank",
+    "campos": {
+      "origen": "Source bank",
+      "origenPlaceholder": "Select your bank",
+      "monto": "Amount"
+    },
+    "acciones": {
+      "submit": "Load",
+      "submitLoading": "Loading…"
+    },
+    "errores": {
+      "montoInvalido": "Invalid amount",
+      "origenInvalido": "Select a bank",
+      "sesion": "Session expired. Create your account again.",
+      "red": "Network error. Try again."
+    },
+    "exito": "Balance loaded successfully"
+  },
+  "RealizarPago": {
+    "titulo": "Send money",
+    "subtitulo": "Pay to a registered phone number",
+    "campos": {
+      "celularDestino": "Destination phone",
+      "celularDestinoPlaceholder": "3001234567",
+      "monto": "Amount",
+      "concepto": "Description",
+      "conceptoPlaceholder": "What's this for?",
+      "pin": "Confirmation PIN"
+    },
+    "acciones": {
+      "submit": "Send",
+      "submitLoading": "Sending…"
+    },
+    "errores": {
+      "celularInvalido": "Invalid Colombian phone",
+      "montoInvalido": "Invalid amount (max. $3,000,000)",
+      "conceptoInvalido": "Description required",
+      "pinInvalido": "PIN must be 4 digits",
+      "sesion": "Session expired. Create your account again.",
+      "red": "Network error. Try again."
+    },
+    "exito": "Payment sent successfully"
+  }
+}

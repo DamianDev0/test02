@@ -1,0 +1,95 @@
+{
+  "App": {
+    "title": "Billetera",
+    "description": "Tu billetera digital P2P"
+  },
+  "Onboarding": {
+    "titulo": "Crear cuenta",
+    "subtitulo": "Tu billetera digital en menos de un minuto"
+  },
+  "CrearCuenta": {
+    "campos": {
+      "celular": "Celular",
+      "celularPlaceholder": "3001234567",
+      "pin": "PIN (4 dígitos)",
+      "pinPlaceholder": "••••"
+    },
+    "acciones": {
+      "submit": "Crear cuenta",
+      "submitLoading": "Creando…"
+    },
+    "errores": {
+      "celularInvalido": "Celular colombiano inválido",
+      "pinInvalido": "PIN debe ser 4 dígitos",
+      "datosInvalidos": "Datos inválidos",
+      "red": "Error de red. Intenta de nuevo."
+    },
+    "exito": "Cuenta creada"
+  },
+  "Cuenta": {
+    "saldo": "Saldo",
+    "estado": "Estado",
+    "estados": {
+      "Activa": "Activa",
+      "Bloqueada": "Bloqueada",
+      "Cerrada": "Cerrada"
+    }
+  },
+  "Dashboard": {
+    "titulo": "Mi billetera",
+    "miCuenta": "Saldo disponible",
+    "acciones": {
+      "cargar": "Cargar",
+      "pagar": "Pagar"
+    },
+    "transacciones": {
+      "titulo": "Últimos movimientos",
+      "vacio": "No hay movimientos aún"
+    }
+  },
+  "CargarSaldo": {
+    "titulo": "Cargar saldo",
+    "subtitulo": "Transfiere desde tu banco",
+    "campos": {
+      "origen": "Banco origen",
+      "origenPlaceholder": "Selecciona tu banco",
+      "monto": "Monto"
+    },
+    "acciones": {
+      "submit": "Cargar",
+      "submitLoading": "Cargando…"
+    },
+    "errores": {
+      "montoInvalido": "Monto inválido",
+      "origenInvalido": "Selecciona un banco",
+      "sesion": "Sesión expirada. Crea tu cuenta de nuevo.",
+      "red": "Error de red. Intenta de nuevo."
+    },
+    "exito": "Saldo cargado exitosamente"
+  },
+  "RealizarPago": {
+    "titulo": "Enviar dinero",
+    "subtitulo": "Paga a otro celular registrado",
+    "campos": {
+      "celularDestino": "Celular destino",
+      "celularDestinoPlaceholder": "3001234567",
+      "monto": "Monto",
+      "concepto": "Concepto",
+      "conceptoPlaceholder": "¿Por qué le envías?",
+      "pin": "PIN de confirmación"
+    },
+    "acciones": {
+      "submit": "Enviar",
+      "submitLoading": "Enviando…"
+    },
+    "errores": {
+      "celularInvalido": "Celular colombiano inválido",
+      "montoInvalido": "Monto inválido (máx. $3.000.000)",
+      "conceptoInvalido": "Concepto requerido",
+      "pinInvalido": "PIN debe ser 4 dígitos",
+      "sesion": "Sesión expirada. Crea tu cuenta de nuevo.",
+      "red": "Error de red. Intenta de nuevo."
+    },
+    "exito": "Pago enviado exitosamente"
+  }
+}
