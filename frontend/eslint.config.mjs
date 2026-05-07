@@ -55,6 +55,18 @@ const eslintConfig = defineConfig([
       "boundaries/no-private": ["error", { allowUncles: false }],
     },
   },
+  {
+    // Vendor Ruixen + shadcn primitives — relax rules we cannot fix without rewriting upstream
+    files: ["src/shared/ui/ruixen/**/*.tsx", "src/shared/ui/shadcn/**/*.tsx"],
+    rules: {
+      "react-hooks/set-state-in-effect": "off",
+      "react-hooks/refs": "off",
+      "react-hooks/purity": "off",
+      "react-hooks/exhaustive-deps": "off",
+      "@typescript-eslint/no-unused-vars": "off",
+      "@next/next/no-img-element": "off",
+    },
+  },
 ]);
 
 export default eslintConfig;

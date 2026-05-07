@@ -6,6 +6,21 @@
   "Onboarding": {
     "titulo": "Crear cuenta",
     "subtitulo": "Tu billetera digital en menos de un minuto",
+    "pasos": {
+      "titulo": "Cómo funciona",
+      "crear": {
+        "titulo": "Crea tu cuenta",
+        "descripcion": "Solo tu celular y un PIN de 4 dígitos."
+      },
+      "cargar": {
+        "titulo": "Carga saldo",
+        "descripcion": "Desde Bancolombia, Davivienda, BBVA o Nequi."
+      },
+      "pagar": {
+        "titulo": "Envía dinero",
+        "descripcion": "A cualquier celular registrado, al instante."
+      }
+    },
     "faq": {
       "titulo": "Preguntas frecuentes",
       "queEs": {

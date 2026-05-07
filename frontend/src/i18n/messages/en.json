@@ -6,6 +6,21 @@
   "Onboarding": {
     "titulo": "Create account",
     "subtitulo": "Your digital wallet in under a minute",
+    "pasos": {
+      "titulo": "How it works",
+      "crear": {
+        "titulo": "Create your account",
+        "descripcion": "Just your phone number and a 4-digit PIN."
+      },
+      "cargar": {
+        "titulo": "Top up",
+        "descripcion": "From Bancolombia, Davivienda, BBVA or Nequi."
+      },
+      "pagar": {
+        "titulo": "Send money",
+        "descripcion": "To any registered phone, instantly."
+      }
+    },
     "faq": {
       "titulo": "Frequently asked questions",
       "queEs": {

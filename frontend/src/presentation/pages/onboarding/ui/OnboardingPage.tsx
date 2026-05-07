@@ -3,6 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/sha
 import { DottedBackground } from '@/shared/ui/atoms'
 import { CrearCuentaForm } from 'features/crear-cuenta'
 import { OnboardingFAQ } from './OnboardingFAQ'
+import { OnboardingPasos } from './OnboardingPasos'
 
 export async function OnboardingPage() {
   const t = await getTranslations('Onboarding')
@@ -22,6 +23,21 @@ export async function OnboardingPage() {
           </CardHeader>
           <CardContent>
             <CrearCuentaForm />
+          </CardContent>
+        </Card>
+
+        <Card className="border-border/30 bg-card/40 backdrop-blur-sm">
+          <CardHeader className="pb-3">
+            <CardTitle className="text-sm font-semibold tracking-wide uppercase text-muted-foreground">
+              {t('pasos.titulo')}
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <OnboardingPasos
+              paso1={{ titulo: t('pasos.crear.titulo'), descripcion: t('pasos.crear.descripcion') }}
+              paso2={{ titulo: t('pasos.cargar.titulo'), descripcion: t('pasos.cargar.descripcion') }}
+              paso3={{ titulo: t('pasos.pagar.titulo'), descripcion: t('pasos.pagar.descripcion') }}
+            />
           </CardContent>
         </Card>
 
