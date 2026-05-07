@@ -1,10 +1,10 @@
 'use server'
 
 import { z } from 'zod'
-import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
 import { getTranslations } from 'next-intl/server'
 import { apiFetch, toErrorMessage } from '@/shared/api'
+import { setSession } from '@/shared/lib/session'
 
 const InputSchema = z.object({
   celular: z.string().regex(/^3\d{9}$/),
@@ -51,9 +51,6 @@ export async function crearCuenta(
     return { ok: false, error: toErrorMessage(error, t('errores.red')) }
   }
 
-  const cookieStore = await cookies()
-  cookieStore.set('bid', cuentaId, { httpOnly: true, sameSite: 'lax', path: '/' })
-  cookieStore.set('bcel', parsed.data.celular, { httpOnly: true, sameSite: 'lax', path: '/' })
-
+  await setSession(cuentaId, parsed.data.celular)
   redirect('/dashboard')
 }

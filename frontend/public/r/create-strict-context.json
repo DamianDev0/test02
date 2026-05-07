@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "create-strict-context",
+  "title": "createStrictContext",
+  "description": "Type-safe React context helper that throws if used outside its Provider. Eliminates the repeated useContext + null-check pattern.",
+  "files": [
+    {
+      "path": "src/shared/lib/createStrictContext.ts",
+      "content": "'use client'\n\nimport { createContext, useContext } from 'react'\nimport type { Provider } from 'react'\n\nexport function createStrictContext<T>(name: string): readonly [Provider<T | null>, () => T] {\n  const Context = createContext<T | null>(null)\n  Context.displayName = name\n\n  function useStrictContext(): T {\n    const ctx = useContext(Context)\n    if (!ctx) {\n      throw new Error(`${name} sub-components must be used inside <${name}>`)\n    }\n    return ctx\n  }\n\n  return [Context.Provider, useStrictContext] as const\n}\n",
+      "type": "registry:lib",
+      "target": "lib/create-strict-context.ts"
+    }
+  ],
+  "type": "registry:lib"
+}

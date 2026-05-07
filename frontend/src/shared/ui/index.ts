@@ -37,6 +37,9 @@ export { Alert, AlertTitle, AlertDescription, AlertAction } from './shadcn/alert
 // ── Organisms genéricos (shadcn) ────────────────────
 export { Toaster } from './shadcn/sonner'
 
+// ── Atoms custom ────────────────────────────────────
+export { AnimatedNumber, DottedBackground } from './atoms'
+
 // ── Organisms custom ────────────────────────────────
 export {
   Form, useFormField, useFormContext,

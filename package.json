@@ -1,0 +1,32 @@
+{
+  "name": "wallet",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "prepare": "husky",
+    "commitlint": "commitlint --edit",
+    "dev": "pnpm -F frontend dev",
+    "build": "pnpm -F frontend build",
+    "start": "pnpm -F frontend start",
+    "lint": "pnpm -F frontend lint",
+    "typecheck": "pnpm -F frontend typecheck",
+    "test": "pnpm -F frontend test",
+    "test:watch": "pnpm -F frontend test:watch",
+    "test:coverage": "pnpm -F frontend test:coverage",
+    "storybook": "pnpm -F frontend storybook",
+    "build-storybook": "pnpm -F frontend build-storybook",
+    "registry:build": "pnpm -F frontend registry:build"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.6.1",
+    "@commitlint/config-conventional": "^19.6.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.2.11"
+  },
+  "lint-staged": {
+    "frontend/**/*.{ts,tsx}": [
+      "bash -c 'cd frontend && pnpm lint --fix'",
+      "bash -c 'cd frontend && pnpm tsc --noEmit'"
+    ]
+  }
+}

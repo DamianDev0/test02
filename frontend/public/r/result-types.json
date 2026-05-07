@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "result-types",
+  "title": "Brand & Result types",
+  "description": "Typed branded primitives and Result<T, E> discriminated union for explicit error handling.",
+  "files": [
+    {
+      "path": "src/shared/lib/types.ts",
+      "content": "declare const brand: unique symbol\n\nexport type Brand<T, B extends string> = T & { readonly [brand]: B }\n\nexport type Result<T, E = Error> =\n  | { readonly ok: true; readonly value: T }\n  | { readonly ok: false; readonly error: E }\n\nexport const Ok = <T>(value: T): Result<T, never> => ({ ok: true, value })\nexport const Err = <E>(error: E): Result<never, E> => ({ ok: false, error })\n",
+      "type": "registry:lib",
+      "target": "lib/types.ts"
+    }
+  ],
+  "type": "registry:lib"
+}

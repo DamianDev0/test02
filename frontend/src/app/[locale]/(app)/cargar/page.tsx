@@ -1,7 +1,16 @@
-import { getCargarSaldoData } from 'pages/cargar-saldo'
-import { CargarSaldoPage } from 'pages/cargar-saldo'
+import { Suspense } from 'react'
+import { getCargarSaldoData, CargarSaldoPage } from 'pages/cargar-saldo'
+import Loading from '../../loading'
 
-export default async function Page() {
+async function CargarContent() {
   const data = await getCargarSaldoData()
   return <CargarSaldoPage data={data} />
+}
+
+export default function Page() {
+  return (
+    <Suspense fallback={<Loading />}>
+      <CargarContent />
+    </Suspense>
+  )
 }

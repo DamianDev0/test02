@@ -3,21 +3,20 @@
 import { useContext, useMemo, useRef, useState } from 'react'
 import type { ChangeEvent, ClipboardEvent, ComponentProps, KeyboardEvent, ReactNode } from 'react'
 import { AlertCircleIcon, CheckCircle2Icon, Loader2Icon } from 'lucide-react'
-import { cn } from '@/shared/lib/utils'
+import { cn } from '@/lib/utils'
+import { Alert, AlertDescription } from '@/components/ui/alert'
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
+import { Label } from '@/components/ui/label'
 import {
-  Alert,
-  AlertDescription,
-  Button,
-  Input,
-  Label,
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-  Separator,
-  Textarea,
-} from '@/shared/ui'
+} from '@/components/ui/select'
+import { Separator } from '@/components/ui/separator'
+import { Textarea } from '@/components/ui/textarea'
 import {
   FormContext,
   FormFieldContext,
@@ -220,7 +219,7 @@ function FormSelect({
   return (
     <>
       <input type="hidden" name={name} value={value} />
-      <Select value={value} onValueChange={(v) => setValue(v ?? '')} disabled={readOnly}>
+      <Select value={value} onValueChange={(v: string | null) => setValue(v ?? '')} disabled={readOnly}>
         <SelectTrigger
           id={inputId}
           aria-invalid={hasError}

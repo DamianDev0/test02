@@ -20,6 +20,9 @@
     ],
     "paths": {
       "@/*": ["./src/*"],
+      "@/components/ui/*": ["./src/shared/ui/shadcn/*"],
+      "@/lib/*": ["./src/shared/lib/*"],
+      "@/hooks/*": ["./src/shared/hooks/*"],
       "shared/*": ["./src/shared/*"],
       "entities/*": ["./src/entities/*"],
       "features/*": ["./src/features/*"],

@@ -10,6 +10,10 @@ const eslintConfig = defineConfig([
     ".next/**",
     "out/**",
     "build/**",
+    "storybook-static/**",
+    "coverage/**",
+    "public/**",
+    "node_modules/**",
     "next-env.d.ts",
   ]),
   {
@@ -30,6 +34,11 @@ const eslintConfig = defineConfig([
       "boundaries/ignore": ["**/*.test.*", "**/*.spec.*"],
     },
     rules: {
+      "@typescript-eslint/no-unused-vars": ["warn", {
+        argsIgnorePattern: "^_",
+        varsIgnorePattern: "^_",
+        caughtErrorsIgnorePattern: "^_",
+      }],
       "boundaries/no-unknown": "off",
       "boundaries/no-unknown-files": "off",
       "boundaries/element-types": ["error", {

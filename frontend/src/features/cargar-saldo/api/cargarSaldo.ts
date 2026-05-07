@@ -1,11 +1,11 @@
 'use server'
 
 import { z } from 'zod'
-import { cookies } from 'next/headers'
 import { getTranslations } from 'next-intl/server'
 import { revalidateTag } from 'next/cache'
 import { apiFetch, toErrorMessage } from '@/shared/api'
-import { CACHE_TAGS } from '@/shared/lib/cache'
+import { CACHE_TAGS } from '@/shared/lib'
+import { getSession } from '@/shared/lib/session'
 
 const InputSchema = z.object({
   monto: z.coerce.number().positive().max(10_000_000),
@@ -23,9 +23,8 @@ export async function cargarSaldo(
 ): Promise<CargarSaldoState> {
   const t = await getTranslations('CargarSaldo')
 
-  const cookieStore = await cookies()
-  const cuentaId = cookieStore.get('bid')?.value
-  if (!cuentaId) return { ok: false, error: t('errores.sesion') }
+  const session = await getSession()
+  if (!session) return { ok: false, error: t('errores.sesion') }
 
   const parsed = InputSchema.safeParse({
     monto: formData.get('monto'),
@@ -41,12 +40,12 @@ export async function cargarSaldo(
   }
 
   try {
-    await apiFetch(`/api/v1/billetera/cuentas/${cuentaId}/cargas`, {
+    await apiFetch(`/api/v1/billetera/cuentas/${session.cuentaId}/cargas`, {
       method: 'POST',
       body: JSON.stringify(parsed.data),
       revalidate: false,
     })
-    revalidateTag(CACHE_TAGS.cuenta(cuentaId), 'max')
+    revalidateTag(CACHE_TAGS.cuenta(session.cuentaId), 'max')
     return { ok: true }
   } catch (error) {
     return { ok: false, error: toErrorMessage(error, t('errores.red')) }

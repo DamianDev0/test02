@@ -1,0 +1,116 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "wallet-ui",
+  "homepage": "https://github.com/DamianDev0/test02",
+  "items": [
+    {
+      "name": "create-strict-context",
+      "type": "registry:lib",
+      "title": "createStrictContext",
+      "description": "Type-safe React context helper that throws if used outside its Provider. Eliminates the repeated useContext + null-check pattern.",
+      "files": [
+        {
+          "path": "src/shared/lib/createStrictContext.ts",
+          "type": "registry:lib",
+          "target": "lib/create-strict-context.ts"
+        }
+      ]
+    },
+    {
+      "name": "result-types",
+      "type": "registry:lib",
+      "title": "Brand & Result types",
+      "description": "Typed branded primitives and Result<T, E> discriminated union for explicit error handling.",
+      "files": [
+        {
+          "path": "src/shared/lib/types.ts",
+          "type": "registry:lib",
+          "target": "lib/types.ts"
+        }
+      ]
+    },
+    {
+      "name": "form",
+      "type": "registry:component",
+      "title": "Form (Compound)",
+      "description": "Compound form built on Server Actions: Field, Input, Textarea, Select, PinInput, MoneyInput, Status, Actions, SubmitButton.",
+      "registryDependencies": [
+        "button",
+        "input",
+        "label",
+        "alert",
+        "select",
+        "textarea",
+        "separator"
+      ],
+      "files": [
+        {
+          "path": "src/shared/ui/form/Form.tsx",
+          "type": "registry:component",
+          "target": "components/form/Form.tsx"
+        },
+        {
+          "path": "src/shared/ui/form/Form.context.ts",
+          "type": "registry:component",
+          "target": "components/form/Form.context.ts"
+        },
+        {
+          "path": "src/shared/ui/form/useFormField.ts",
+          "type": "registry:component",
+          "target": "components/form/useFormField.ts"
+        },
+        {
+          "path": "src/shared/ui/form/derive.ts",
+          "type": "registry:component",
+          "target": "components/form/derive.ts"
+        },
+        {
+          "path": "src/shared/ui/form/index.ts",
+          "type": "registry:component",
+          "target": "components/form/index.ts"
+        }
+      ]
+    },
+    {
+      "name": "transaccion-item",
+      "type": "registry:component",
+      "title": "TransaccionItem",
+      "description": "Renderiza una transacción con destino, concepto, monto y estado.",
+      "files": [
+        {
+          "path": "src/entities/transaccion/ui/TransaccionItem.tsx",
+          "type": "registry:component",
+          "target": "components/transaccion/TransaccionItem.tsx"
+        }
+      ]
+    },
+    {
+      "name": "cuenta-resumen",
+      "type": "registry:component",
+      "title": "CuentaResumen",
+      "description": "Widget compound (Header + Saldo + Acciones) para resumen de cuenta billetera.",
+      "registryDependencies": ["card"],
+      "files": [
+        {
+          "path": "src/widgets/cuenta-resumen/ui/CuentaResumen.tsx",
+          "type": "registry:component",
+          "target": "components/cuenta-resumen/CuentaResumen.tsx"
+        }
+      ]
+    },
+    {
+      "name": "transacciones-feed",
+      "type": "registry:component",
+      "title": "TransaccionesFeed",
+      "description": "Widget compound (Title + Empty + List) para listar transacciones.",
+      "registryDependencies": ["card"],
+      "files": [
+        {
+          "path": "src/widgets/transacciones-feed/ui/TransaccionesFeed.tsx",
+          "type": "registry:component",
+          "target": "components/transacciones-feed/TransaccionesFeed.tsx"
+        }
+      ]
+    }
+  ]
+}

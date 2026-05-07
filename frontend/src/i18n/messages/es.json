@@ -5,7 +5,26 @@
   },
   "Onboarding": {
     "titulo": "Crear cuenta",
-    "subtitulo": "Tu billetera digital en menos de un minuto"
+    "subtitulo": "Tu billetera digital en menos de un minuto",
+    "faq": {
+      "titulo": "Preguntas frecuentes",
+      "queEs": {
+        "titulo": "Qué es esta billetera",
+        "contenido": "Una billetera digital P2P para transferir dinero entre celulares colombianos. Sin tarjeta, sin comisiones por transferencia entre usuarios."
+      },
+      "comisiones": {
+        "titulo": "Comisiones",
+        "contenido": "Transferencias entre billeteras: gratis. Cargas desde banco: depende del banco origen. Sin cuotas de manejo mensuales."
+      },
+      "limites": {
+        "titulo": "Límites diarios",
+        "contenido": "Cuenta de trámite simplificado (Decreto 1872 de 2021): hasta $3.000.000 COP por día en pagos. Saldo máximo $10.000.000 COP."
+      },
+      "seguridad": {
+        "titulo": "Seguridad",
+        "contenido": "PIN de 4 dígitos por operación. Sesión cifrada con cookies httpOnly. Cumplimiento PCI-DSS y normativa SFC."
+      }
+    }
   },
   "CrearCuenta": {
     "campos": {
@@ -36,6 +55,7 @@
     }
   },
   "Dashboard": {
+    "saludo": "Hola",
     "titulo": "Mi billetera",
     "miCuenta": "Saldo disponible",
     "acciones": {
@@ -90,6 +110,10 @@
       "sesion": "Sesión expirada. Crea tu cuenta de nuevo.",
       "red": "Error de red. Intenta de nuevo."
     },
-    "exito": "Pago enviado exitosamente"
+    "exito": "Pago enviado exitosamente",
+    "optimistic": {
+      "titulo": "Procesando pago…",
+      "descripcion": "Enviando {monto} a {destino}"
+    }
   }
 }

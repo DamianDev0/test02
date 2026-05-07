@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "transacciones-feed",
+  "title": "TransaccionesFeed",
+  "description": "Widget compound (Title + Empty + List) para listar transacciones.",
+  "registryDependencies": [
+    "card"
+  ],
+  "files": [
+    {
+      "path": "src/widgets/transacciones-feed/ui/TransaccionesFeed.tsx",
+      "content": "import type { ReactNode } from 'react'\nimport { Card, CardContent, CardHeader } from '@/components/ui/card'\n\ninterface RootProps {\n  children: ReactNode\n  className?: string\n}\n\nfunction Root({ children, className }: Readonly<RootProps>) {\n  return <Card className={className}>{children}</Card>\n}\n\ninterface TitleProps {\n  children: ReactNode\n}\n\nfunction Title({ children }: Readonly<TitleProps>) {\n  return (\n    <CardHeader className=\"pb-2\">\n      <p className=\"text-sm font-semibold\">{children}</p>\n    </CardHeader>\n  )\n}\n\ninterface EmptyProps {\n  children: ReactNode\n}\n\nfunction Empty({ children }: Readonly<EmptyProps>) {\n  return (\n    <CardContent>\n      <p className=\"text-sm text-muted-foreground text-center py-6\">{children}</p>\n    </CardContent>\n  )\n}\n\ninterface ListProps {\n  children: ReactNode\n}\n\nfunction List({ children }: Readonly<ListProps>) {\n  return <CardContent className=\"p-0 pb-2\">{children}</CardContent>\n}\n\nexport const TransaccionesFeed = Object.assign(Root, { Title, Empty, List })\n",
+      "type": "registry:component",
+      "target": "components/transacciones-feed/TransaccionesFeed.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

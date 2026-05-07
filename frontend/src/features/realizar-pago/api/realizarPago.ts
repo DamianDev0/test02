@@ -1,11 +1,11 @@
 'use server'
 
 import { z } from 'zod'
-import { cookies } from 'next/headers'
 import { getTranslations } from 'next-intl/server'
 import { revalidateTag } from 'next/cache'
 import { apiFetch, toErrorMessage } from '@/shared/api'
-import { CACHE_TAGS } from '@/shared/lib/cache'
+import { CACHE_TAGS } from '@/shared/lib'
+import { getSession } from '@/shared/lib/session'
 
 const InputSchema = z.object({
   celularDestino: z.string().regex(/^3\d{9}$/),
@@ -27,9 +27,8 @@ export async function realizarPago(
 ): Promise<RealizarPagoState> {
   const t = await getTranslations('RealizarPago')
 
-  const cookieStore = await cookies()
-  const cuentaId = cookieStore.get('bid')?.value
-  if (!cuentaId) return { ok: false, error: t('errores.sesion') }
+  const session = await getSession()
+  if (!session) return { ok: false, error: t('errores.sesion') }
 
   const parsed = InputSchema.safeParse({
     celularDestino: formData.get('celularDestino'),
@@ -50,7 +49,7 @@ export async function realizarPago(
 
   try {
     const result = await apiFetch<{ transaccionId: string }>(
-      `/api/v1/billetera/cuentas/${cuentaId}/pagos`,
+      `/api/v1/billetera/cuentas/${session.cuentaId}/pagos`,
       {
         method: 'POST',
         body: JSON.stringify(parsed.data),
@@ -58,8 +57,8 @@ export async function realizarPago(
         parse: (json) => ResponseSchema.parse(json),
       },
     )
-    revalidateTag(CACHE_TAGS.cuenta(cuentaId), 'max')
-    revalidateTag(CACHE_TAGS.transacciones(cuentaId), 'max')
+    revalidateTag(CACHE_TAGS.cuenta(session.cuentaId), 'max')
+    revalidateTag(CACHE_TAGS.transacciones(session.cuentaId), 'max')
     return { ok: true, transaccionId: result.transaccionId }
   } catch (error) {
     return { ok: false, error: toErrorMessage(error, t('errores.red')) }

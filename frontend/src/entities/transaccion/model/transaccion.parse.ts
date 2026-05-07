@@ -1,5 +1,6 @@
 import { z } from 'zod'
 import type { TransaccionId, TransaccionPago } from './transaccion.types'
+import { ESTADOS_TRANSACCION } from './transaccion.types'
 import type { NumeroCelular } from 'entities/cuenta-billetera'
 
 const DineroSchema = z.object({ monto: z.number(), moneda: z.string() })
@@ -10,7 +11,7 @@ const TransaccionSchema = z.object({
   destino: z.string(),
   monto: DineroSchema,
   concepto: z.string(),
-  estado: z.enum(['Pendiente', 'Confirmada', 'Rechazada']),
+  estado: z.enum(ESTADOS_TRANSACCION),
   creadaEn: z.string(),
 })
 

@@ -5,7 +5,26 @@
   },
   "Onboarding": {
     "titulo": "Create account",
-    "subtitulo": "Your digital wallet in under a minute"
+    "subtitulo": "Your digital wallet in under a minute",
+    "faq": {
+      "titulo": "Frequently asked questions",
+      "queEs": {
+        "titulo": "What is this wallet",
+        "contenido": "A P2P digital wallet to transfer money between Colombian phone numbers. No card, no fees on user-to-user transfers."
+      },
+      "comisiones": {
+        "titulo": "Fees",
+        "contenido": "Wallet-to-wallet transfers: free. Bank top-ups: depends on source bank. No monthly maintenance fees."
+      },
+      "limites": {
+        "titulo": "Daily limits",
+        "contenido": "Simplified account (Decree 1872 of 2021): up to $3,000,000 COP per day in payments. Maximum balance $10,000,000 COP."
+      },
+      "seguridad": {
+        "titulo": "Security",
+        "contenido": "4-digit PIN per operation. Encrypted session with httpOnly cookies. PCI-DSS compliance and SFC regulations."
+      }
+    }
   },
   "CrearCuenta": {
     "campos": {
@@ -36,6 +55,7 @@
     }
   },
   "Dashboard": {
+    "saludo": "Hello",
     "titulo": "My wallet",
     "miCuenta": "Available balance",
     "acciones": {
@@ -90,6 +110,10 @@
       "sesion": "Session expired. Create your account again.",
       "red": "Network error. Try again."
     },
-    "exito": "Payment sent successfully"
+    "exito": "Payment sent successfully",
+    "optimistic": {
+      "titulo": "Processing payment…",
+      "descripcion": "Sending {monto} to {destino}"
+    }
   }
 }

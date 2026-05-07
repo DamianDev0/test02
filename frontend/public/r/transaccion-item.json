@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "transaccion-item",
+  "title": "TransaccionItem",
+  "description": "Renderiza una transacción con destino, concepto, monto y estado.",
+  "files": [
+    {
+      "path": "src/entities/transaccion/ui/TransaccionItem.tsx",
+      "content": "import { formatMoney } from '@/lib/format-money'\nimport { BadgeMorph } from '@/shared/ui/ruixen/badge-morph'\nimport type { TransaccionPago } from '../model/transaccion.types'\n\ninterface TransaccionItemProps {\n  transaccion: TransaccionPago\n}\n\nconst estadoToBadge: Record<TransaccionPago['estado'], 'idle' | 'loading' | 'success' | 'error'> = {\n  Pendiente: 'loading',\n  Confirmada: 'success',\n  Rechazada: 'error',\n}\n\nconst estadoLabel: Record<TransaccionPago['estado'], string> = {\n  Pendiente: 'Pendiente',\n  Confirmada: 'Confirmada',\n  Rechazada: 'Rechazada',\n}\n\nexport function TransaccionItem({ transaccion }: Readonly<TransaccionItemProps>) {\n  return (\n    <div className=\"flex items-center justify-between py-3 border-b last:border-0 gap-4\">\n      <div className=\"space-y-0.5 min-w-0 flex-1\">\n        <p className=\"text-sm font-medium truncate\">{transaccion.destino}</p>\n        <p className=\"text-xs text-muted-foreground truncate\">{transaccion.concepto}</p>\n      </div>\n      <div className=\"flex flex-col items-end gap-1.5 shrink-0\">\n        <p className=\"text-sm font-semibold text-destructive tabular-nums\">\n          -{formatMoney(transaccion.monto.monto)}\n        </p>\n        <BadgeMorph\n          status={estadoToBadge[transaccion.estado]}\n          label={estadoLabel[transaccion.estado]}\n          className=\"text-[10px] py-1 px-2\"\n        />\n      </div>\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/transaccion/TransaccionItem.tsx"
+    }
+  ],
+  "type": "registry:component"
+}
